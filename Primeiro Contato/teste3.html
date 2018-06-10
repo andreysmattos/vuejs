@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Teste 2</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+
+	<div id="app">
+
+		<span v-bind:title="mensagem1">Primeiro span </span> 
+		<br/ >
+
+
+		<span v-bind:title="mensagem2">Segundo span </span> 
+		<br/ >
+
+		<span v-bind:title="mensagem3">Terceiro span </span> 
+		<br/ >
+
+		
+	</div>
+
+	<script>
+		
+		var app = new Vue({
+			el: '#app',
+			data: {
+				mensagem1: 'Titulo do primeiro span',
+				mensagem2: 'Você carregou está página em ' + new Date().toLocaleString(),
+				mensagem3: 123 * 5
+			}
+		});
+
+	</script>
+	
+</body>
+</html>

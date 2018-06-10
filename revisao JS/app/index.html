@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+
+  <title>Hello, world!</title>
+</head>
+<body>
+
+
+  <nav class="navbar navbar-light bg-light">
+    <a id="navtitle" class="navbar-brand" href="#"> Nav</a>
+  </nav>
+
+  <div class="container-fluid">
+
+    <div class="form-inline">
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="desc" placeholder="descrição"> 
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="qtd" placeholder="Quantidade"> 
+      </div>
+
+      <div class="form-group">
+        <input type="text" class="form-control" id="valor" placeholder="Valor"> 
+      </div>
+      
+      <span id="btnUpdate" style="display: none">
+        <input type="hidden" id="guardaid">
+      <button onClick="updateForm()" class="btn btn-primary">Save</button>
+      <button onClick="resetForm()" class="btn btn-primary">Cancel</button>
+
+      </span>
+
+      <span id="btnAdd">
+
+       <button  onClick="addDados()" class="btn btn-primary">ADD</button>
+
+
+      <button id="resetItens" onClick="resetItens()" class="btn btn-danger">Reset</button>
+
+      <button id="deletelist" onClick="deletelist()" class="btn btn-danger">Deletar lista</button>
+
+    </span>
+     
+
+    </div>
+
+    <span id="error"></span>
+
+    <table id="list-table" class="table">
+
+
+
+    </table>
+
+  </div>
+
+
+
+  <script src="js/main.js"></script>
+  <script src="js/config.js"></script>
+</body>

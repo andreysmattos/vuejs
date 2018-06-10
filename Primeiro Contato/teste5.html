@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Teste 2</title>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+	<div id="app">
+
+		<input type="text" v-model="add">
+
+		<div v-for="andrey in lista" style="border: solid 2px #000; width: 100px; height: 100px; margin: 30px; line-height: 100px; text-align: center;">
+			{{andrey}}
+
+		</div>
+
+
+
+	</div>
+
+
+	<script>
+
+var i = 1;
+		var app = new Vue({
+			el: '#app',
+			data: {
+				lista: {
+					1: 'div 1',
+					2: 'segunda div',
+					3: 'três'
+				},
+				andreylista: [{text : 'teste' }]
+			}
+		});
+
+
+console.log(app.andreylista.text);
+
+
+	</script>
+
+
+	
+</body>
+</html>
