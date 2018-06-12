@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+		{{teste}}
+		<br/>
+		{{toUpperCase}}
+
+	</div>
+	
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script>
+
+		var app = new Vue({
+			el: "#app",
+			beforeCreate(){
+				alert('1');
+			},
+			created(){
+				alert('2');
+				
+			},
+			beforeMount(){
+				alert('3')
+			},
+			mounted(){
+				aler('4 acesso ao dom')
+			},
+			beforeUpdate(){
+
+			},
+			updated(){
+
+			},
+			data: {
+				nome: "Andrey",
+				teste: 'x'
+				
+			},
+			filters: {
+
+			},
+			methods: {
+				
+			},
+			computed: {
+				toUpperCase(){
+					console.log('FUNCIONOU')
+					return this.teste.toUpperCase();
+				}
+			},watch: {
+				nome(novo, velho){
+					console.log('novo: ', novo);
+					console.log('antigo: ', velho);
+				}
+			}
+
+		});
+		
+	</script>
+</body>
+</html>
