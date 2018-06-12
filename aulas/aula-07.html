@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+	<style>
+		.ativo {
+			background-color: red;
+			color: white;
+			font-weight: 900;
+			border-color: red;
+			border-radius: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="app">
+
+		<h1>{{title}}</h1>
+
+		<button id="1" v-on:click="mudaTexto(1)" v-bind:class="cativo">Texto 1</button>
+		<button id="2" v-on:click="mudaTexto(2)" v-bind:class="cativo">Texto 2</button>
+
+		<p id="texto"> </p>
+
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+
+		var app = new Vue({
+			el: "#app",
+			data: {
+				title: 'Titulo da página',
+				textoum: 'TEXTO 1 TEXTO 1 TEXTO 1',
+				textodois: 'TEXTO 2 TEXTO 2 TEXTO 2',
+				cativo: {
+					ativo: false
+				}
+			},
+			methods: {
+				mudaTexto: function(id){
+
+					var local = (id === 1) ? this.textoum : this.textodois;
+
+					console.log(local)
+					document.getElementById('texto').innerHTML = local;
+					this.cativo.ativo = true;
+					document.getElementById(id).classList.remove('')
+					
+				}
+			}
+		});
+
+
+	</script>
+</body>
+</html>

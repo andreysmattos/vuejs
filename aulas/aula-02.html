@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+		<div v-if="usuario.id == 1">
+			Id: {{usuario.id}} <br/>
+			Nome: {{usuario.nome}}<br/>
+			Profissão: {{usuario.profissao}}<br/>
+		</div>
+
+		<div v-else>
+			Não tem usuario com ID igual a 1
+		</div>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+
+		var app = new Vue({
+			el: '#app',
+			data: {
+				titulo: 'Aula 01 - Vuejs do jeito ninja!',
+				usuario: {
+					id: 1,
+					nome: "andrey",
+					profissao: 'front-end'
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

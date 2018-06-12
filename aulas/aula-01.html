@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+		<h1>{{titulo}}</h1>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+		
+		var app = new Vue({
+			el: '#app',
+			data: {
+				titulo: 'Aula 01 - Vuejs do jeito ninja!'
+			},
+			methods:{
+				mudaTitulo: function (){
+					document.title = this.titulo;
+				}
+			}
+		});
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+		
+		<img v-bind:src="imagem" v-bind:alt="xd + 'teste'" v-on:click="teste()">
+
+		<p v-bind:class="classe">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo, aliquid aliquam rem sapiente, distinctio illum quisquam maiores officia neque, eveniet pariatur voluptates rerum accusantium. Autem, dolore, minima. Quam, iusto, consequuntur!</p>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+
+		var app = new Vue({
+			el: '#app',
+			data: {
+				titulo: 'Aula 01 - Vuejs do jeito ninja!',
+				status: 1,
+				imagem: "img/cocker.jpg",
+				xd: 'teste12333',
+				classe: 'active'
+			}, methods: {
+				teste: function(){
+					alert('clicou');
+				}
+			}
+		});
+
+
+
+		function teste(){
+			alert('clicou');
+		}
+
+	</script>
+</body>
+</html>

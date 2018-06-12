@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+		<label for="nome">Nome</label>
+		<input type="text" v-model="nome">
+
+		<br>
+		<br>
+
+		<label for="telefone">Telefone</label>
+		<input type="text" v-model="telefone">
+
+		<br>
+		<br>
+
+		<label for="novidades">Deseja receber novidades?</label>
+		<input type="radio" v-model="novidades" value="1"> Sim
+		<input type="radio" v-model="novidades" value="0"> Não
+
+		<br>
+		<br>
+
+
+		<label for="interesses">interesses?</label><br/>
+		<input type="checkbox" v-model="interesses" value="1"> Futebol <br/>
+		<input type="checkbox" v-model="interesses" value="2"> Formula 1 <br/>
+		<input type="checkbox" v-model="interesses" value="3"> Corrida <br/>
+
+		<br>
+		<br>
+
+
+		<label for="conheceu">Como nos conheceu?</label>
+		<select v-model="conheceu">
+			<option value="Google">Google</option>
+			<option value="Tv">Tv</option>
+			<option value="Revistra">Revistra</option>
+
+		</select>
+
+		<br>
+		<br>
+
+
+
+
+
+<div style="border: solid 2px black; width: 300px; height: 300px">
+	Nome: {{nome}}<hr>
+	telefone: {{telefone}}<hr>
+	novidades: {{novidades}}<hr>
+	interesses: {{interesses}}<hr>
+	conheceu: {{conheceu}}<hr>
+
+</div>
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+
+		var app = new Vue({
+			el: '#app',
+			data: {
+				titulo: 'Aula 01 - Vuejs do jeito ninja!',
+				nome: '',
+				telefone: '',
+				novidades: '',
+				interesses: [],
+				conheceu: '',
+			}
+		});
+
+
+
+
+	</script>
+</body>
+</html>

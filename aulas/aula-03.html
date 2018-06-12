@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+
+		<ul>
+			<li v-for="(value, key) in linguagens">{{value.nome}}</li>
+
+		</ul>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+
+		var app = new Vue({
+			el: '#app',
+			data: {
+				titulo: 'Aula 01 - Vuejs do jeito ninja!',
+				linguagens: [{
+					nome: 'Javascript'
+				},{
+					nome: 'PHP'
+				},{
+					nome: 'C#'
+				},{
+					nome: 'Rusty'
+				},{
+					nome: 'Ruby'
+				}]
+			}
+		});
+
+
+	</script>
+</body>
+</html>

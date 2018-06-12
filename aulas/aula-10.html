@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+		<h1>{{nome}}</h1>
+
+
+		<ul>
+
+			<li v-for="key in usuarios"> {{key.nome | truncate(2)}}</li>
+		</ul>
+
+
+	</div>
+	
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script>
+
+		var app = new Vue({
+			el: "#app",
+			data: {
+				nome: "andrey",
+				data: '2018-06-19',
+				usuarios: [
+				{
+					nome: 'Andrey'
+				},{
+					nome: 'Mario'
+				},{
+					nome: "fernanda"
+				}
+				]
+			},
+			filters: {
+				toUpperCase(str){
+					return str.toUpperCase();
+				},
+				truncate(str, tam){
+					if(str.length > tam){
+						return str.substring(0,tam) + '...';
+					}
+					return str;
+				}
+
+
+			}
+
+
+			,methods: {
+				teste: function (str){
+					str1 = str.substring(0,1);
+					str = str.replace(str1, str1.toUpperCase());
+					return str;
+				}, teste2: function (data){
+					var novo = data.split('-');
+
+					return novo[2] + '/' + novo[1] + '/' + novo[0];
+
+					console.log(novo);
+				}
+			}
+
+		});
+		
+	</script>
+</body>
+</html>

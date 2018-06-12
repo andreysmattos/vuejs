@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<div id="app">
+		<h1>{{nome}}</h1>
+
+		<button v-on:click="mudaCor('vermelho')"> Vermelho</button>
+		<button v-on:click="mudaCor('rosa')"> Rosa</button>
+		<button v-on:click="mudaCor('azul')"> Azul</button>
+		<button v-on:click="mudaCor('laranja')"> Laranja</button>
+
+		<br>
+		<br>
+		<br>
+
+		<div v-bind:style="cor" style="width: 100px; height: 100px; border: solid 2px black; line-height: 100px; font-size: 22px; font-weight: 900; text-align: center; color: #fff">Cor</div>
+
+
+	</div>
+	
+
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+	<script>
+
+		var app = new Vue({
+			el: "#app",
+			data: {
+				nome: "andrey",
+				cor: {
+					background: "transparent"
+				}
+			}, methods: {
+				mudaCor: function(cor){
+					switch(cor) {
+						case 'vermelho':
+						this.cor.background = 'red'; 
+						break;
+						case 'rosa':
+						this.cor.background = 'pink';
+						break;
+						case 'azul':
+						this.cor.background = 'blue';
+						break;
+						case 'laranja':
+						this.cor.background = 'orange';
+						break;
+
+					}
+				}
+			}
+
+		});
+		
+	</script>
+</body>
+</html>
