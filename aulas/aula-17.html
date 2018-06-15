@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<div id="app">
+		
+		<div v-for="item in exibe" class="box">
+			<h4>ID: {{item.id}}</h4>
+			<h4>{{item.title}}</h4>
+		</div>
+
+		<br/>
+		<br/>
+		<br/>
+
+		<a href="#" @click="setList('back')"> <- </a>
+
+		||||
+		<a href="#" @click="setList('add')"> -> </a>
+
+	</div>
+	
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+	
+	var app = new Vue({
+		el: '#app',
+		data: {
+			exibe: [],
+			gimg: [
+			{
+				img: 'caminho',
+				title: 'Primeiro',
+				id: 0
+			},
+			{
+				img: 'caminho',
+				title: 'Segundo',
+				id: 1
+			},
+			{
+				img: 'caminho',
+				title: 'Terceiro',
+				id: 2
+			},
+			{
+				img: 'caminho',
+				title: 'Quarto',
+				id: 3
+			},
+			{
+				img: 'caminho',
+				title: 'Quinto',
+				id: 4
+			},
+			{
+				img: 'caminho',
+				title: 'Sexto',
+				id: 5
+			},{
+				img: 'caminho',
+				title: 'Setimo',
+				id: 6
+			}
+			]
+		}, methods: {
+			teste: function andrey(){
+				alert('xd');
+			},
+			setList: function(action){
+				
+				var ultimo = (this.gimg.length) - 1;
+				ultimo = this.gimg[ultimo].id;
+				var primeiro = this.gimg[0].id;
+				var primeiroQueExibe = this.exibe[0].id;
+				//console.log('primeiro', primeiro)
+
+
+				var ultimoQueAparece = this.exibe.length - 1;
+				ultimoQueAparece = this.exibe[ultimoQueAparece].id;
+
+
+				if(action == 'add'){
+					if(primeiro == primeiroQueExibe){
+						console.log('ultimo = ', ultimo);
+						console.log('ultimoQueAparece = ', ultimoQueAparece);
+						console.log('primeiro = ', primeiro);
+						console.log('primeiroQueExibe = ', primeiroQueExibe);
+						
+						primeiroQueExibe = ultimo +1;
+					}
+
+					this.exibe.unshift(this.gimg[primeiroQueExibe - 1]);
+					this.exibe.pop();
+					
+
+				}
+
+				if(action == 'back'){
+
+					console.log('ultimo',ultimo);
+					console.log('ultimoQueAparece',ultimoQueAparece);
+
+					if(ultimoQueAparece == ultimo){
+						ultimoQueAparece = -1;
+						//alert('entro agora')
+					}
+
+					this.exibe.shift();
+					this.exibe.push(this.gimg[ultimoQueAparece + 1]);
+				}
+
+
+
+
+			}
+		},
+		mounted(){
+			for(var i = 0; i < 4; i++){
+				this.exibe.push({
+					img: this.gimg[i].img,
+					title: this.gimg[i].title,
+					id: this.gimg[i].id
+				});
+			}
+		}
+	});
+</script>
+
+
+<style>
+body {
+	background: #ccc;
+}
+.box {
+	width: 100px;
+	height: 100px;
+	background: red;
+	margin: 20px;
+	text-align: center;
+	display: inline-block;
+}
+</style>

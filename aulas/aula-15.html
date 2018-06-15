@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="app">
+		
+		<h1>{{title}}</h1>
+
+
+		<input id="and" type="text" v-model="valor" @keyup.enter="envia()">
+
+		<ul>
+			<li v-for="k in list">Nome: {{k.nome}} -- Versão: {{k.versao}}</li>
+		</ul>
+
+
+	
+
+	<h1>{{valor}}</h1>
+
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script>
+
+
+		
+		var app = new Vue({
+			el: "#app",
+			data: {
+				valor: '',
+				submit: '',
+				title: "Aula - 15",
+				list: [
+				{
+					nome: 'PHP',
+					versao: '7.0'
+				},
+				{
+					nome: 'Javascript',
+					versao: '8.0'
+				},
+				{
+					nome: 'C++',
+					versao: '99.0'
+				},
+				{
+					nome: 'Rusty',
+					versao: '2.0'
+				}
+				]
+			},
+			methods: {
+				setTitle: function(){
+					document.title = this.title;
+				}
+				,envia: function(){
+					document.getElementById('and').value = ''
+					this.list.push({nome: this.valor, versao: 'xd'})
+
+				}
+			}
+
+		});
+
+		app.setTitle();
+
+	</script>
+</body>
+</html>
